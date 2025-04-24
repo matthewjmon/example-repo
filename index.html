@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="col-md-1 logo-container">
+            <img src="Images/logo.jpg" class="img-fluid logo" alt="MaTTech logo">
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <label for="font-select" class="visually-hidden">Choose Font</label>
+                <select id="font-select" name="fonts">
+                    <option value="title" selected disabled hidden>Pick a font:</option>
+                    <option value="Open Sans">Open Sans</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lato">Lato</option>
+                    <option value="Arial">Arial</option>
+                </select>
+            </ul>
+        </nav>
+        <article id="cart" class="cart-icon position-relative">
+            Cart 🛒
+            <span id="cart-count" class="cart-count">0</span>
+            <div id="cart-modal" class="cart-popup position-absolute">
+                <div class="modal-content">
+                    <span id="close-cart" class="close-btn">&times;</span>
+                    <h5>Your Cart</h5>
+                    <ul id="cart-items" class="list-group mb-2"></ul>
+                    <p><strong>Total:</strong> <span id="cart-total">R0</span></p>
+                    <button class="btn btn-danger btn-sm" id="clear-cart">Clear Cart</button>
+                </div>
+            </div>
+        </article>
+
+        <div class="select-currency">
+            <label for="currency" class="visually-hidden">Choose Currency</label>
+            <select name="currency" id="currency">
+                <option value="title" selected disabled hidden>Currency &#127757;</option>
+                <option value="ZAR" class="ZAR">ZAR (&#82;)</option>
+                <option value="USD" class="USD">USD (&#36;)</option>
+                <option value="EUR" class="EUR">EUR (&#163;)</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <div id="welcome-banner" class="welcome-banner">
+            <div class="banner-content">
+              <p id="welcome-message">Welcome back!</p>
+              <button id="close-banner" class="btn btn-secondary">Got it!</button>
+            </div>
+          </div>
+          <div id="cache-banner">
+            <div class="banner-content">
+              <span class="banner-text">This page is using cached product data to improve performance.</span>
+              <button id="cache-close">Got it!</button>
+            </div>
+          </div>
+        <section class="page-top">
+            <h1 class="text-center my-4">MaTTech</h1>
+            <p class="text-center">Explore Your New World of Technology</p>
+        </section>
+        <section class="container text-center" id="shop">
+            <div class="row mb-1">
+                <div class="col-md-3">
+                    <div class="product-box border border-secondary rounded">
+                        <img src="Images/2080.jpg" alt="Nvidia RTX 2080" class="img-fluid product-img">
+                        <h2 class="product-name">Nvidia RTX 2080</h2>
+                        <p class="product-price" data-zar="7000">R7000</p>
+                        <button class="btn btn-outline-primary product-btn">Add To Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box border border-secondary rounded">
+                        <img src="Images/switch.jpg" alt="Nintendo Switch" class="img-fluid product-img">
+                        <h2 class="product-name">Nintendo Switch</h2>
+                        <p class="product-price" data-zar="10000">R10 000</p>
+                        <button class="btn btn-outline-primary product-btn">Add To Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box border border-secondary rounded">
+                        <img src="Images/iMac.jpg" alt="Apple iMac" class="img-fluid product-img">
+                        <h2 class="product-name">Apple iMac</h2>
+                        <p class="product-price" data-zar="15000">R15 000</p>
+                        <button class="btn btn-outline-primary product-btn">Add To Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box border border-secondary rounded">
+                        <img src="Images/mouse 2.jpg" alt="RGB Gaming Mouse" class="img-fluid product-img">
+                        <h2 class="product-name">RGB Gaming Mouse</h2>
+                        <p class="product-price" data-zar="500">R500</p>
+                        <button class="btn btn-outline-primary product-btn">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <div class="product-box border border-secondary rounded">
+                        <img src="Images/macbook.jpg" alt="Apple MacBook Air" class="img-fluid product-img">
+                        <h2 class="product-name">Apple MacBook Air</h2>
+                        <p class="product-price" data-zar="20000">R20 000</p>
+                        <button class="btn btn-outline-primary product-btn">Add To Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box border border-secondary rounded">
+                        <img src="Images/controller-white.jpg" alt="White Xbox Series X Controller" class="img-fluid product-img">
+                        <h2 class="product-name">Xbox Series X Controller (White)</h2>
+                        <p class="product-price" data-zar="1000">R1000</p>
+                        <button class="btn btn-outline-primary product-btn">Add To Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box border border-secondary rounded">
+                        <img src="Images/xbox-controller.jpg" alt="Black Xbox Series X Controller" class="img-fluid product-img">
+                        <h2 class="product-name">Xbox Series X Controller (Black)</h2>
+                        <p class="product-price" data-zar="1000">R1000</p>
+                        <button class="btn btn-outline-primary product-btn">Add To Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box border border-secondary rounded">
+                        <img src="Images/headphones.jpg" alt="Solo K240 Headphones" class="img-fluid product-img">
+                        <h2 class="product-name">Solo K240 Headphones</h2>
+                        <p class="product-price" data-zar="700">R700</p>
+                        <button class="btn btn-outline-primary product-btn">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 offset-3">
+                    <div class="product-box border border-secondary rounded">
+                        <img src="Images/ps5-bag.jpg" alt="Sony PS5 Carry-Bag" class="img-fluid product-img">
+                        <h2 class="product-name">Sony PS5 Carry-Bag</h2>
+                        <p class="product-price" data-zar="500">R500</p>
+                        <button class="btn btn-outline-primary product-btn">Add To Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box border border-secondary rounded">
+                        <img src="Images/beats.jpg" alt="Beats by Dre Headphones" class="img-fluid product-img">
+                        <h2 class="product-name">Beats by Dre Headphones</h2>
+                        <p class="product-price" data-zar="2000">R2000</p>
+                        <button class="btn btn-outline-primary product-btn">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="py-4">
+            <div class="container">
+                <div class="footer-container d-flex justify-content-center align-items-center">
+
+                    <div class="form-container d-flex justify-content-center flex-column align-items-center w-100">
+                        <!-- Form Heading -->
+                        <div class="row mb-3 align-items-center form-heading text-center w-100">
+                            <h3 class="form-heading">Get in touch with us!</h3>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <form id="contact" class="w-100">
+                            <!-- Full Name -->
+                            <div class="row mb-3 align-items-center gap-2">
+                                <label for="name" class="col-sm-4 col-md-4 col-form-label text-end">Full Name:</label>
+                                <div class="col-sm-7 col-md-4">
+                                    <input type="text" class="form-control" id="name" aria-label="Full Name">
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="row mb-3 align-items-center gap-2">
+                                <label for="email" class="col-sm-4 col-md-4 col-form-label text-end">Email:</label>
+                                <div class="col-sm-7 col-md-4">
+                                    <input type="email" class="form-control" id="email" aria-label="Email">
+                                </div>
+                            </div>
+
+                            <!-- Phone Number -->
+                            <div class="row mb-3 align-items-center gap-2">
+                                <label for="phone" class="col-sm-4 col-md-4 col-form-label text-end">Phone Number:</label>
+                                <div class="col-sm-7 col-md-4">
+                                    <input type="tel" class="form-control" id="phone" aria-label="Phone Number">
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="row mb-3 align-items-center gap-2">
+                                <label class="col-sm-4 col-md-4"></label>
+                                <div class="col-sm-7 col-md-4">
+                                    <button class="btn btn-primary w-100">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Footer Logo -->
+                    <div class="footer-logo-container ms-4">
+                        <img src="Images/logo.jpg" class="img-fluid logo" id="footer-logo" alt="MaTTech logo">
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>
